@@ -16,6 +16,7 @@
     <url>%2Fjylm%2Fbbec1031%2F</url>
     <content type="text"><![CDATA[前言LeetCoding系列是对LeetCode题库的解析，凡是解决过后的题都会给出java和python两种源码，包含详细的注释、题解说明以及其他有意思的扩展。坚持是一种态度，工作之余，不妨Let me coding coding~ 思考使人进步，学习之余，不妨Let me thinking thinking~ 1. Two Sum题意： 给一个数组和一个目标值，返回数组中两个数之和为目标值的下标。题解： 目前最高效的解法是利用Map的特性，O(n)的时间求解。Code: 123456789101112/*java code*/public int[] twoSum(int[] nums, int target) &#123; Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;(); for (int i = 0; i &lt; nums.length; i++) &#123; int complement = target - nums[i]; if (map.containsKey(complement)) &#123; return new int[] &#123; map.get(complement), i &#125;; &#125; map.put(nums[i], i); &#125; throw new IllegalArgumentException("No two sum solution");&#125; 123456789/*pyhon code*/def twoSum(self, nums, target): map = &#123;&#125; for i, n in enumerate(nums): m = target - n if m in map: return [map[m], i] else: map[n] = i 2. Add Two Numbers]]></content>
       <categories>
+        <category>猿来如此</category>
         <category>算法</category>
       </categories>
       <tags>
