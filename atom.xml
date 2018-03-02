@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jiyilimian.com/"/>
-  <updated>2018-02-28T07:20:48.994Z</updated>
+  <updated>2018-01-17T00:54:51.057Z</updated>
   <id>http://jiyilimian.com/</id>
   
   <author>
@@ -15,30 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>SpringBatch批处理框架</title>
-    <link href="http://jiyilimian.com/jylm/8cabe91/"/>
-    <id>http://jiyilimian.com/jylm/8cabe91/</id>
-    <published>2018-02-28T02:09:06.000Z</published>
-    <updated>2018-02-28T07:20:48.994Z</updated>
-    
-    <content type="html"><![CDATA[<p>Spring Batch是一个轻量级的批处理框架，轻量级是相对于如Hadoop(MapReduce)、Spark之类的集群批处理框架，批处理框架是相对于企业框架中OLTP类的处理框架。或许是因为它的这两个特点，目前关于SpringBatch的资料少之又少，中文资料甚之。其实SpringBatch优势非常多，应用简单且扩展性好等等，因此近一段时间由于负责的系统进行扩展涉及该知识点，便借此时间深入学习并总结SpringBatch批处理框架系列知识点。<br><a id="more"></a></p><h2 id="0x00-SpringBatch理论初识"><a href="#0x00-SpringBatch理论初识" class="headerlink" title="0x00 SpringBatch理论初识"></a>0x00 SpringBatch理论初识</h2><p>该模块主要介绍SpringBatch批处理框架的理论知识，目录如下：<br>// TODO</p><h2 id="0x10-SpringBatch实例应用"><a href="#0x10-SpringBatch实例应用" class="headerlink" title="0x10 SpringBatch实例应用"></a>0x10 SpringBatch实例应用</h2><p>该模块主要介绍SpringBatch批处理框架实例应用，目录如下：<br>// TODO</p><h2 id="0x20-SpirngBatch源码解析"><a href="#0x20-SpirngBatch源码解析" class="headerlink" title="0x20 SpirngBatch源码解析"></a>0x20 SpirngBatch源码解析</h2><p>该模块主要介绍SpringBatch批处理框架源码解析，目录如下：<br>// TODO</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Spring Batch是一个轻量级的批处理框架，轻量级是相对于如Hadoop(MapReduce)、Spark之类的集群批处理框架，批处理框架是相对于企业框架中OLTP类的处理框架。或许是因为它的这两个特点，目前关于SpringBatch的资料少之又少，中文资料甚之。其实SpringBatch优势非常多，应用简单且扩展性好等等，因此近一段时间由于负责的系统进行扩展涉及该知识点，便借此时间深入学习并总结SpringBatch批处理框架系列知识点。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="猿来如此" scheme="http://jiyilimian.com/categories/%E7%8C%BF%E6%9D%A5%E5%A6%82%E6%AD%A4/"/>
-    
-    
-      <category term="批处理框架" scheme="http://jiyilimian.com/tags/%E6%89%B9%E5%A4%84%E7%90%86%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="SpringBatch" scheme="http://jiyilimian.com/tags/SpringBatch/"/>
-    
-  </entry>
   
   <entry>
     <title>Markdown语法详解</title>
