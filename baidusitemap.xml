@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://jiyilimian.com/jylm/51630ea5/</loc>
-    <lastmod>2018-03-03T06:47:55.719Z</lastmod>
+    <lastmod>2018-03-11T04:14:10.273Z</lastmod>
     <data>
         <display>
         <title>2018要跑，更要坚持</title>
@@ -17,6 +17,72 @@
            
              
               <breadCrumb title="维度生活" url="http://jiyilimian.com/categories/%E7%BB%B4%E5%BA%A6%E7%94%9F%E6%B4%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jiyilimian.com/jylm/30815e15/</loc>
+    <lastmod>2018-03-10T03:02:09.253Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈大学遗憾的事-ACM篇</title>
+        <pubTime>2018-02-04T01:46:57.000Z</pubTime>
+        
+        <tag>大学时光</tag>
+         
+        <tag>ACM</tag>
+         
+         
+           
+             
+              <breadCrumb title="维度生活" url="http://jiyilimian.com/categories/%E7%BB%B4%E5%BA%A6%E7%94%9F%E6%B4%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jiyilimian.com/jylm/9e453436/</loc>
+    <lastmod>2018-03-10T03:01:10.949Z</lastmod>
+    <data>
+        <display>
+        <title>不可磨灭的数模情怀</title>
+        <pubTime>2018-02-04T01:46:34.000Z</pubTime>
+        
+        <tag>大学时光</tag>
+         
+        <tag>数学建模</tag>
+         
+         
+           
+             
+              <breadCrumb title="维度生活" url="http://jiyilimian.com/categories/%E7%BB%B4%E5%BA%A6%E7%94%9F%E6%B4%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jiyilimian.com/jylm/8cabe91/</loc>
+    <lastmod>2018-03-09T02:52:31.032Z</lastmod>
+    <data>
+        <display>
+        <title>SpringBatch批处理框架</title>
+        <pubTime>2018-02-28T02:09:06.000Z</pubTime>
+        
+        <tag>批处理框架</tag>
+         
+        <tag>SpringBatch</tag>
+         
+         
+           
+             
+              <breadCrumb title="猿来如此" url="http://jiyilimian.com/categories/%E7%8C%BF%E6%9D%A5%E5%A6%82%E6%AD%A4/"/>
           
         </display>
     </data>
@@ -37,28 +103,6 @@
            
              
               <breadCrumb title="笆阁书屋" url="http://jiyilimian.com/categories/%E7%AC%86%E9%98%81%E4%B9%A6%E5%B1%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jiyilimian.com/jylm/8cabe91/</loc>
-    <lastmod>2018-03-02T09:18:52.381Z</lastmod>
-    <data>
-        <display>
-        <title>SpringBatch批处理框架</title>
-        <pubTime>2018-02-28T02:09:06.000Z</pubTime>
-        
-        <tag>批处理框架</tag>
-         
-        <tag>SpringBatch</tag>
-         
-         
-           
-             
-              <breadCrumb title="猿来如此" url="http://jiyilimian.com/categories/%E7%8C%BF%E6%9D%A5%E5%A6%82%E6%AD%A4/"/>
           
         </display>
     </data>
