@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SpringBatch批处理框架-初识]]></title>
+    <url>%2Fjylm%2F3ee81f0a%2F</url>
+    <content type="text"><![CDATA[前言A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.对于SpringBatch官网是这样给出描述的：一个轻量级的、完善的批处理框架，旨在帮助企业建立健壮的、高效的批处理应用，对企业系统的日常运作至关重要。 业务场景什么是批处理什么是SpringBatch]]></content>
+      <categories>
+        <category>猿来如此</category>
+      </categories>
+      <tags>
+        <tag>批处理框架</tag>
+        <tag>SpringBatch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCoding[2^3-2^4)]]></title>
+    <url>%2Fjylm%2F892169ca%2F</url>
+    <content type="text"><![CDATA[前言LeetCoding系列是对LeetCode题库的解析，凡是解决过后的题都会给出java和python两种源码，包含详细的注释、题解说明以及其他有意思的扩展。坚持是一种态度，工作之余，不妨Let me coding coding~ 思考使人进步，学习之余，不妨Let me thinking thinking~ 9. Palindrome Number题意： 判断一个整数是否是回文数，但有空间限制。题解： 根据题意有两个限制：一是负数不算回文数，二是空间复杂度只能为O(1)。根据空间限制则暴力是满足不了，可通过两种方式解决：1. 回文数折半相等：读取该数x的一半并将x消去读到一半，然后比较左右两半是否相等。2. 回文数逆向一致：利用python列表可快速取逆，判断前后是否一致。题地址： https://leetcode.com/problems/palindrome-number/description/Code: 1234567891011121314151617/*java code*/public boolean isPalindrome(int x) &#123; // 边界 if(x &lt; 0 || (x % 10 == 0 &amp;&amp; x != 0)) &#123; return false; &#125; int right = 0; while (x &gt; right) &#123; right = right * 10 + x % 10; // left x /= 10; &#125; return (x == right) || (x == right / 10);&#125; 1234567# pyhon3 codedef isPalindrome(self, x): if x &lt; 0 or (str(x)[-1] == '0' and x != 0) : return False x = str(x) y = x[::-1] return y == x Difficulty： EasyTag： Math 13. Roman to Integer题意： 给定一个罗马数字串，要求转化为整数，范围为[1, 3999].题解： 熟悉罗马数字关系，做整数映射，然后遍历罗马数字串进行转化即可。题地址： https://leetcode.com/problems/roman-to-integer/description/Code: 123456789101112131415161718192021222324252627282930313233/*java code*/public int romanToInt(String s) &#123; // roman to int map Map&lt;String, Integer&gt; romanMap = new HashMap&lt;&gt;(); romanMap.put("M", 1000); romanMap.put("D", 500); romanMap.put("C", 100); romanMap.put("L", 50); romanMap.put("X", 10); romanMap.put("V", 5); romanMap.put("I", 1); // conversion numbers char []str = s.toCharArray(); int len = str.length; int [] nums = new int[len]; for(int i = 0; i &lt; len; i++) &#123; nums[i] = romanMap.get(String.valueOf(str[i])); &#125; // get int by roman rule int sum = nums[len - 1]; for(int i = 0; i &lt; len - 1; i++) &#123; if (nums[i] &gt;= nums[i+1]) &#123; sum += nums[i]; &#125; else &#123; sum -= nums[i]; &#125; &#125; return sum;&#125; 123456789101112131415# pyhon3 codedef romanToInt(self, s): # roman dict romanDict = &#123;"M":1000, "D":500, "C":100, "L":50, "X":10, "V":5, "I":1&#125; # conversion numbers num = romanDict[s[-1]] for r in range(0, len(s) - 1): if romanDict[s[r]] &gt;= romanDict[s[r + 1]]: num += romanDict[s[r]] else: num -= romanDict[s[r]] return num Difficulty： EasyTag： Math String]]></content>
+      <categories>
+        <category>猿来如此</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCoding[2^2-2^3)]]></title>
+    <url>%2Fjylm%2Fd3c2ca8%2F</url>
+    <content type="text"><![CDATA[前言LeetCoding系列是对LeetCode题库的解析，凡是解决过后的题都会给出java和python两种源码，包含详细的注释、题解说明以及其他有意思的扩展。坚持是一种态度，工作之余，不妨Let me coding coding~ 思考使人进步，学习之余，不妨Let me thinking thinking~ 7. Reverse Integer题意： 给你一个32位有符号整数，返回反转后的整数。题解： 根据给出的示例以及备注信息，可以得到以下几点信息： 1. 如果是正数则直接反转，负数则只反转数字，符号不处理； 2. 如果反转后首位为0则过滤掉； 3. 如果反转后数溢出了（整型最大最小值），则直接返回0.那么，结合上述的三点分析也可以得出我们的解题思路，如下： 1. 首先排除正负数‘-’的干扰； 2. 将剩下的整数进行反转（利用整数除和取余的特性，或利用字符串逆向取数特性），处理首位为0时的情况； 3. 要对反转结果溢出情况的处理，这一点应该是本题最难和关键的点，需要了解整数溢出的特点。题地址： https://leetcode.com/problems/reverse-integer/description/Code: 123456789101112131415161718192021/*java code*/public int reverse(int x) &#123; int sign = x &gt; 0 ? 1 : -1; x = Math.abs(x); int r = 0; while (x &gt; 0) &#123; // 预先判断下一步是否会溢出 if (Integer.MAX_VALUE / 10 &lt; r || Integer.MAX_VALUE - x % 10 &lt; r * 10) &#123; return 0; &#125; // reverse r = r * 10 + x % 10; x /= 10; &#125; return sign * r;&#125; 注：关于是否溢出的判断有多种方式，目前看到最普遍有两种，你能想到更多的么？ 1. 边界值预判：本题采用的方式，每次循环判断下一步操作是否会溢出边界值； 2. 不可逆判断：每次反转后，再反转回去看是否和反转前一致，不一致则说明溢出返回0，否则继续。 1234567# pyhon codedef reverse(self, x): # sign s = (x &gt; 0) - (x &lt; 0) # reverse r = int(str(x*s)[::-1]) return s*r * (r &lt; 2**31) Difficulty： EasyTag： Math]]></content>
+      <categories>
+        <category>猿来如此</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2018要跑，更要坚持]]></title>
     <url>%2Fjylm%2F51630ea5%2F</url>
-    <content type="text"><![CDATA[2018,跑步依然是全民新年愿望前三的关键词，而坚持却是跑步的秘笈。2018一周一跑，愿四季的风与您相随。 0x00 写在前面2018跑步也是我想要完成和坚持的一项运动，遂决定每周会去锦江生态带跑一次。不在于结果，在于过程。希望自己能够坚持完成，记录于此，于回忆于坚持。 0x01 20180303万物复苏第一次开跑，没有技巧，没有规划，全凭一个差点遗忘的念头。虽然谷雨说：“祝能够坚持成功”，但当选择开始，就不会轻易放弃，于是 坚持 成为了这篇文章的主题，记录开跑第一次: 0x02 20180311一路相随油菜花早已随风充盈，早早地起来准备着，只是提了下让谷雨骑车相伴，没想到她像是要去远方旅游一样细心对待。于是我们牵着手开始了第二次的跑步。一路上她踩着单车陪伴左右，是鼓励和支持，让我少了很多第一次需要独自面对的艰难感觉。所以就悄然萌生要跑出这个数字来感谢她的陪伴，也希望能与你一路相随，一路相爱，么么哒。]]></content>
+    <content type="text"><![CDATA[2018,跑步依然是全民新年愿望前三的关键词，而坚持却是跑步的秘笈。2018一周一跑，愿四季的风与您相随。 0x00 写在前面2018跑步也是我想要完成和坚持的一项运动，遂决定每周会去锦江生态带跑一次。不在于结果，在于过程。希望自己能够坚持完成，记录于此，于回忆于坚持。 0x01 20180303万物复苏第一次开跑，没有技巧，没有规划，全凭一个差点遗忘的念头。虽然谷雨说：“祝能够坚持成功”，但当选择开始，就不会轻易放弃，于是 坚持 成为了这篇文章的主题，记录开跑第一次: 0x02 20180311一路相随油菜花早已随风充盈，早早地起来准备着，只是提了下让谷雨骑车相伴，没想到她像是要去远方旅游一样细心对待。于是我们牵着手开始了第二次的跑步。一路上她踩着单车陪伴左右，是鼓励和支持，让我少了很多第一次需要独自面对的艰难感觉。所以就悄然萌生要跑出这个数字来感谢她的陪伴，也希望能与你一路相随，一路相爱。 0x03 20180318短暂暂停周末因参加朋友的婚礼，而被迫暂停一次。不过还是感叹下乐山的美食是真的很好吃，值得再去一次。 0x04 20180325春天的味道春天真正完全融入到身边每个角落，刚经历两天的雨天，今天早上空气格外美好，蓝蓝天空，追逐的鸟儿，还有使人心情无限舒畅的嫩芽……虽然暂停了一周，但感觉自己也逐渐熟悉5公里的节奏，以及专属的路线，一切都刚刚好，一起都充满春天的味道。]]></content>
       <categories>
         <category>维度生活</category>
       </categories>
@@ -14,7 +50,7 @@
   <entry>
     <title><![CDATA[SpringBatch批处理框架]]></title>
     <url>%2Fjylm%2F8cabe91%2F</url>
-    <content type="text"><![CDATA[Spring Batch是一个轻量级的批处理框架，轻量级是相对于如Hadoop(MapReduce)、Spark之类的集群批处理框架，批处理框架是相对于企业框架中OLTP类的处理框架。或许是因为它的这两个特点，目前关于SpringBatch的资料少之又少，中文资料甚之。其实SpringBatch优势非常多，应用简单且扩展性好等等，因此近一段时间由于负责的系统进行扩展涉及该知识点，便借此时间深入学习并总结SpringBatch批处理框架系列知识点。 0x00 SpringBatch理论初识该模块主要介绍SpringBatch批处理框架的理论知识，目录如下：// TODO 0x10 SpringBatch实例应用该模块主要介绍SpringBatch批处理框架实例应用，目录如下：// TODO 0x20 SpirngBatch源码解析该模块主要介绍SpringBatch批处理框架源码解析，目录如下：// TODO 0x30 SpringBatch相关主题该模块主要罗列SpringBatch相关主题链接，目录如下： SpringBatch 主页 SpringBatch 源码 SpringBatch 文档 SpringBatch API文档]]></content>
+    <content type="text"><![CDATA[Spring Batch是一个轻量级的批处理框架，轻量级是相对于如Hadoop(MapReduce)、Spark之类的集群批处理框架，批处理框架是相对于企业框架中OLTP类的处理框架。或许是因为它的这两个特点，目前关于SpringBatch的资料少之又少，中文资料甚之。其实SpringBatch优势非常多，应用简单且扩展性好等等，因此近一段时间由于负责的系统进行扩展涉及该知识点，便借此时间深入学习并总结SpringBatch批处理框架系列知识点。 0x00 SpringBatch分析及应用该模块主要介绍SpringBatch批处理框架的理论及应用，目录如下：// TODO 0x10 SpirngBatch源码解析该模块主要介绍SpringBatch批处理框架源码解析，目录如下：// TODO 0x20 SpringBatch相关主题该模块主要罗列SpringBatch相关主题链接，目录如下： SpringBatch 主页 SpringBatch 源码 SpringBatch 文档 SpringBatch API文档]]></content>
       <categories>
         <category>猿来如此</category>
       </categories>
@@ -59,9 +95,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCoding(2^0-2^1)]]></title>
+    <title><![CDATA[LeetCoding[2^0-2^1)]]></title>
     <url>%2Fjylm%2Fbbec1031%2F</url>
-    <content type="text"><![CDATA[前言LeetCoding系列是对LeetCode题库的解析，凡是解决过后的题都会给出java和python两种源码，包含详细的注释、题解说明以及其他有意思的扩展。坚持是一种态度，工作之余，不妨Let me coding coding~ 思考使人进步，学习之余，不妨Let me thinking thinking~ 1. Two Sum题意： 给一个数组和一个目标值，返回数组中两个数之和为目标值的下标。题解： 目前最高效的解法是利用Map的特性，O(n)的时间求解。题地址： https://leetcode.com/problems/two-sum/description/Code: 123456789101112/*java code*/public int[] twoSum(int[] nums, int target) &#123; Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;(); for (int i = 0; i &lt; nums.length; i++) &#123; int complement = target - nums[i]; if (map.containsKey(complement)) &#123; return new int[] &#123; map.get(complement), i &#125;; &#125; map.put(nums[i], i); &#125; throw new IllegalArgumentException("No two sum solution");&#125; 123456789/*pyhon code*/def twoSum(self, nums, target): map = &#123;&#125; for i, n in enumerate(nums): m = target - n if m in map: return [map[m], i] else: map[n] = i Difficulty： EasyTag： Array Hash Table 2. Add Two Numbers题意：题解：题地址： https://leetcode.com/problems/add-two-numbers/description/Code: Difficulty：Tag：]]></content>
+    <content type="text"><![CDATA[前言LeetCoding系列是对LeetCode题库的解析，凡是解决过后的题都会给出java和python两种源码，包含详细的注释、题解说明以及其他有意思的扩展。坚持是一种态度，工作之余，不妨Let me coding coding~ 思考使人进步，学习之余，不妨Let me thinking thinking~ 1. Two Sum题意： 给一个数组和一个目标值，返回数组中两个数之和为目标值的下标。题解： 目前最高效的解法是利用Map的特性，O(n)的时间求解。题地址： https://leetcode.com/problems/two-sum/description/Code: 123456789101112/*java code*/public int[] twoSum(int[] nums, int target) &#123; Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;(); for (int i = 0; i &lt; nums.length; i++) &#123; int complement = target - nums[i]; if (map.containsKey(complement)) &#123; return new int[] &#123; map.get(complement), i &#125;; &#125; map.put(nums[i], i); &#125; throw new IllegalArgumentException("No two sum solution");&#125; 123456789# pyhon codedef twoSum(self, nums, target): map = &#123;&#125; for i, n in enumerate(nums): m = target - n if m in map: return [map[m], i] else: map[n] = i Difficulty： EasyTag： Array Hash Table]]></content>
       <categories>
         <category>猿来如此</category>
         <category>算法</category>
@@ -106,7 +142,7 @@
   <entry>
     <title><![CDATA[笆阁里的阅读计划]]></title>
     <url>%2Fjylm%2F772080e8%2F</url>
-    <content type="text"><![CDATA[前言2017年最想养成的读书习惯，却在最后一天发现：未完成。2018年首要的小目标就是：一定要养成读书习惯。于是本文产生了，一方面可以记录读书记录，另一方面许诺自己把读过的书，收集到对应电子书共享出来，共享给有需求的书友。以此督促和留念。可是2018年渐渐流失着，而下文的空白使我谋生了一个可怕的想法：我可以用python爬虫去爬出我书架的电子书，这样拖延症又要犯了，这样吃灰的树莓派不知道是否还健康？待续~~~ 文学篇 书名 作者 开始时间 结束时间 不靠谱的推荐指数 《浮生六记》 沈复 著，张佳玮 译 2017.01 2017.02 ***** 《小王子》 圣埃克絮佩里 著，周克希 译 2017.02 2017.02 *** 《肖申克的救赎》 斯蒂芬·金 著，施寄青等 译 2017.03 2017.03 **** 《查令十字街84号》 海莲·汉芙 著，陈建铭 译 2017.04 2017.05 ***** 《我们仨》 杨绛 2017.05 2017.05 *** 《三体》 刘慈欣 2017.05 2017.08 **** 《岛上书店》 加·泽文 著，孙仲旭等 译 2017.06 2017.06 ***** 《平凡的世界》 路遥 2017.06 2017.09 ***** 《活着》 余华 2017.10 2017.10 *** 《西西弗神话》 阿尔贝·加缪 著，沈志明 译 2017.11 2017.11 *** 《局外人》 阿尔贝·加缪 著，柳鸣九 译 2017.11 2017.11 *** 《明天也是小春日和》 津端英子/津端修一 著，朝阳 译 2018.01 2018.01 ***** 《东京本屋》 吉井忍 2018.01 2018.02 **** 计算机、互联网类 书名 作者 开始时间 结束时间 不靠谱的推荐指数 《数学之美》 吴军 2018.01 ing 《SpringBatch批处理框架》 刘相 2018.03 ing]]></content>
+    <content type="text"><![CDATA[前言2017年最想养成的读书习惯，却在最后一天发现：未完成。2018年首要的小目标就是：一定要养成读书习惯。于是本文产生了，一方面可以记录读书记录，另一方面许诺自己把读过的书，收集到对应电子书共享出来，共享给有需求的书友。以此督促和留念。可是2018年渐渐流失着，而下文的空白使我谋生了一个可怕的想法：我可以用python爬虫去爬出我书架的电子书，这样拖延症又要犯了，这样吃灰的树莓派不知道是否还健康？待续~~~ 文学篇 书名 作者 开始时间 结束时间 不靠谱的推荐指数 《浮生六记》 沈复 著，张佳玮 译 2017.01 2017.02 ***** 《小王子》 圣埃克絮佩里 著，周克希 译 2017.02 2017.02 *** 《肖申克的救赎》 斯蒂芬·金 著，施寄青等 译 2017.03 2017.03 **** 《查令十字街84号》 海莲·汉芙 著，陈建铭 译 2017.04 2017.05 ***** 《我们仨》 杨绛 2017.05 2017.05 *** 《三体》 刘慈欣 2017.05 2017.08 **** 《岛上书店》 加·泽文 著，孙仲旭等 译 2017.06 2017.06 ***** 《平凡的世界》 路遥 2017.06 2017.09 ***** 《活着》 余华 2017.10 2017.10 *** 《西西弗神话》 阿尔贝·加缪 著，沈志明 译 2017.11 2017.11 *** 《局外人》 阿尔贝·加缪 著，柳鸣九 译 2017.11 2017.11 *** 《明天也是小春日和》 津端英子/津端修一 著，朝阳 译 2018.01 2018.01 ***** 《东京本屋》 吉井忍 2018.01 2018.02 **** 《万历十五年》 黄仁宇 2018.03 ing 计算机、互联网类 书名 作者 开始时间 结束时间 不靠谱的推荐指数 《数学之美》 吴军 2018.01 2018.03 **** 《SpringBatch批处理框架》 刘相 2018. ing 《Python核心编程（第3版）》 Wesley Chun 著，孙波翔/李斌/李晗 译 2018.04 ing]]></content>
       <categories>
         <category>笆阁书屋</category>
       </categories>
