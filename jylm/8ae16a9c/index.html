@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch21.png">
 <meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch22.png">
 <meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch23.png">
-<meta property="og:updated_time" content="2018-04-06T03:29:52.617Z">
+<meta property="og:updated_time" content="2018-04-06T04:21:37.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBatch批处理框架-架构解析">
 <meta name="twitter:description" content="0x00.前言上一节我们有提到SpringBatch批处理框架的结构是：通过将批处理程序分解为Job和Job Step两个部分， 将处理环节定义为数据读、 数据处理和数据写三个步骤， 将异常处理机制归结为跳过、 重试、 重启三种类型， 将作业方式区分为多线程、 并行、 远程、 分区四大特征。而本节会深入详细地分析SpringBatch轻量级的、完善的批处理框架。">
@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,989字
+                  1,988字
                 </span>
               
 
@@ -534,7 +534,7 @@
 <h3 id="0x37-Job-Repository"><a href="#0x37-Job-Repository" class="headerlink" title="0x37.Job Repository"></a>0x37.Job Repository</h3><p>存储Job执行期的元数据（这里的元数据是指Job Instance、Job Execution、Job Parameters、Step Execution、Execution Context等数据），并提供两种默认实现。一种是存放在内存中；另一种是将元数据存放在数据库中。<br>通过将元数据存放在数据库中，可以随时监控批处理Job的执行状态，查看Job执行结果是成功还是失败，并且使得在Job失败的情况下重新启动Job成为可能。<br>属性如下：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch22.png" alt="存储器"><br><em>说明：</em><br>Spring Batch框架的JobRepository支待如下的数据库： DB2、Derby、H2、HSQLDB、MySQL、Oracle、PostgreSQL、SQLServer、Sybase。</p>
 <h3 id="0x38-总结"><a href="#0x38-总结" class="headerlink" title="0x38.总结"></a>0x38.总结</h3><p>通过上述主要领域对象的分析，这里总结一下Spring Batch主要的领域对象。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch23.png" alt="主要领域对象"><br><br></p>
 <blockquote>
-<p><strong>Spring Batch系列传送门</strong><br><em>主目录页面：</em><a href="http://jiyilimian.com/jylm/8cabe91/">SpringBatch批处理框架</a><br><em>系列上一节：</em><a href="http://jiyilimian.com/jylm/3ee81f0a/">SpringBatch批处理框架-初识.md</a><br><em>系列下一节：</em><a href="http://jiyilimian.com/jylm/e23d4b81/">SpringBatch批处理框架-一个栗子</a></p>
+<p><strong>Spring Batch系列传送门</strong><br><em>主目录页面：</em><a href="http://jiyilimian.com/jylm/8cabe91/">SpringBatch批处理框架</a><br><em>系列上一节：</em><a href="http://jiyilimian.com/jylm/3ee81f0a/">SpringBatch批处理框架-初识</a><br><em>系列下一节：</em><a href="http://jiyilimian.com/jylm/e23d4b81/">SpringBatch批处理框架-一个栗子</a></p>
 </blockquote>
 <p>&#9803; 感觉本站内容读后有收获？，可点下面<strong>打赏</strong>鼓励。<br>&#9803; 感觉本站内容不错，可点下面<strong>分享</strong>传之。<br><br></p>
 
@@ -557,7 +557,7 @@
 	      <p><span>本文标题:</span><a href="/jylm/8ae16a9c/">SpringBatch批处理框架-架构解析</a></p>
 	        <p><span>文章作者:</span><a href="/" title="访问 沁路 的个人博客">沁路</a></p>
 		  <p><span>发布时间:</span>2018年04月05日 - 17:04</p>
-		    <p><span>最后更新:</span>2018年04月06日 - 11:04</p>
+		    <p><span>最后更新:</span>2018年04月06日 - 12:04</p>
 		      <p><span>原始链接:</span><a href="/jylm/8ae16a9c/" title="SpringBatch批处理框架-架构解析">http://jiyilimian.com/jylm/8ae16a9c/</a>
 		          <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://jiyilimian.com/jylm/8ae16a9c/"  aria-label="复制成功！"></i></span>
 			    </p>
