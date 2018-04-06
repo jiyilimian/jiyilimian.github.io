@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="jiyilimian" />
+  <meta name="keywords" content="批处理框架,SpringBatch," />
 
 
 
@@ -83,16 +83,30 @@
 
 
 
-<meta name="description" content="足迹里的那一抹夕阳,何时待我回忆归去?">
-<meta property="og:type" content="website">
-<meta property="og:title" content="记忆里面">
-<meta property="og:url" content="http://jiyilimian.com/categories/沁听泪/index.html">
+<meta name="description" content="0.前言一切理论基础知识，都是通过实践得到证明。因此本节将会展示Spring Batch批处理的一个实例“Hello World”。">
+<meta name="keywords" content="批处理框架,SpringBatch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBatch批处理框架-一个栗子">
+<meta property="og:url" content="http://jiyilimian.com/jylm/e23d4b81/index.html">
 <meta property="og:site_name" content="记忆里面">
-<meta property="og:description" content="足迹里的那一抹夕阳,何时待我回忆归去?">
+<meta property="og:description" content="0.前言一切理论基础知识，都是通过实践得到证明。因此本节将会展示Spring Batch批处理的一个实例“Hello World”。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch03.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch04.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch05.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch06.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch07.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch08.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch09.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch10.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch11.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch12.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch13.png">
+<meta property="og:updated_time" content="2018-04-06T02:44:04.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记忆里面">
-<meta name="twitter:description" content="足迹里的那一抹夕阳,何时待我回忆归去?">
+<meta name="twitter:title" content="SpringBatch批处理框架-一个栗子">
+<meta name="twitter:description" content="0.前言一切理论基础知识，都是通过实践得到证明。因此本节将会展示Spring Batch批处理的一个实例“Hello World”。">
+<meta name="twitter:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch03.png">
 
 
 
@@ -122,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://jiyilimian.com/categories/沁听泪/"/>
+  <link rel="canonical" href="http://jiyilimian.com/jylm/e23d4b81/"/>
 
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -176,7 +190,7 @@
 
 
 
-  <title>分类: 沁听泪 | 记忆里面</title>
+  <title>SpringBatch批处理框架-一个栗子 | 记忆里面</title>
   
 
 
@@ -205,7 +219,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -343,55 +357,322 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>沁听泪<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://jiyilimian.com/jylm/e23d4b81/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="沁路">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记忆里面">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/jylm/8ee6c723/" itemprop="url">
-              
-                <span itemprop="name">走在音符上</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">SpringBatch批处理框架-一个栗子</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-23T15:16:36+08:00"
-              content="2017-12-23" >
-          12-23
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T17:16:06+08:00">
+                2018-04-05
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/猿来如此/" itemprop="url" rel="index">
+                    <span itemprop="name">猿来如此</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/jylm/e23d4b81/" class="leancloud_visitors" data-flag-title="SpringBatch批处理框架-一个栗子">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+		 <span>°C</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  841字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h2><p>一切理论基础知识，都是通过实践得到证明。因此本节将会展示Spring Batch批处理的一个实例“Hello World”。<br><a id="more"></a></p>
+<h2 id="1-此处需要一个问题"><a href="#1-此处需要一个问题" class="headerlink" title="1.此处需要一个问题"></a>1.此处需要一个问题</h2><p>Problem Description：给一个订单文件(.csv格式)，将文件的金额转化为单位为元及其大写的金额，并输入到指定的文件。<br>Input：输入文件包含两列，第一列为订单单号，第二列为订单金额(单位：分)。<br>Output：输出文件包含三列，第一列为订单单号，第二列为订单金额(单位：元)，第三列为大写金额。</p>
+<h2 id="2-引入依赖"><a href="#2-引入依赖" class="headerlink" title="2.引入依赖"></a>2.引入依赖</h2><p>在工程的<code>pom.xml</code>文件中引入SpringBatch的依赖：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch03.png" alt="引入依赖"><br><em>注：本系列均采用SpringBatch3.0+版本；<br>  spring-batch源码：<a href="https://github.com/spring-projects/spring-batch" target="_blank" rel="noopener">https://github.com/spring-projects/spring-batch</a></em></p>
+<h2 id="3-自动注入"><a href="#3-自动注入" class="headerlink" title="3.自动注入"></a>3.自动注入</h2><p>在<code>resources</code>目录下创建<code>spring-batch-beans.xml</code>文件，自动注入需要的<code>bean</code>。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch04.png" alt="自动注入"></p>
+<h2 id="4-创建数据DTO"><a href="#4-创建数据DTO" class="headerlink" title="4.创建数据DTO"></a>4.创建数据DTO</h2><p>在<code>resources</code>目录下创建<code>order-source.csv</code>文件，用于测试读取的数据文件；<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch05.png" alt="数据文件"><br>并根据文件内容创建对应的订单数据DTO对象。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch06.png" alt="DTO"></p>
+<h2 id="5-ItemReader-读操作"><a href="#5-ItemReader-读操作" class="headerlink" title="5.ItemReader-读操作"></a>5.ItemReader-读操作</h2><p>读操作需要实现<code>ItemReader&lt;T&gt;</code>接口。<br>框架提供了一个现成的实现类<code>FlatFileItemReader</code>，使用该类需要设置<code>Resource</code>和<code>LineMapper</code>。<code>Resource</code>代表着数据源，即<code>order-source.csv</code>文件；<code>LineMapper</code>则表示如何将文件的每行数据转成对应的DTO对象。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch07.png" alt="读操作1"><br>实现<code>LineMapper</code>，即实现读取文件数据转成对应的DTO对象。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch08.png" alt="读操作2"></p>
+<h2 id="6-ItemProcessor-处理操作"><a href="#6-ItemProcessor-处理操作" class="headerlink" title="6.ItemProcessor-处理操作"></a>6.ItemProcessor-处理操作</h2><p>处理操作需要实现<code>ItemProcessor&lt;I,O&gt;</code>接口。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch09.png" alt="处理操作1"><br>业务逻辑处理层，即题中将订单金额转化为元，金额大写等操作。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch10.png" alt="处理操作2"></p>
+<h2 id="7-ItemWriter-写操作"><a href="#7-ItemWriter-写操作" class="headerlink" title="7.ItemWriter-写操作"></a>7.ItemWriter-写操作</h2><p>写操作需要实现<code>ItemWriter&lt;T&gt;</code>接口。<br>框架也提供了一个现成的实现类<code>FlatFileItemWriter</code>。使用该类需要设置<code>Resource</code>和<code>LineAggregator</code>。<code>Resource</code>代表着输出源，输出到<code>order-show.csv</code>文件；<code>LineAggregator</code>则表示如何将DTO对象转成字符串保存到文件的每行。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch11.png" alt="写操作1"><br>实现<code>LineAggregator</code>，即实现DTO对象数据写入到数据文件。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch12.png" alt="写操作2"></p>
+<h2 id="8-Hello-World"><a href="#8-Hello-World" class="headerlink" title="8.Hello World"></a>8.Hello World</h2><p>最后运行主函数，查看结果。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1.加载上下文</span></span><br><span class="line">    String[] configLocations = &#123;<span class="string">"spring-batch-beans.xml"</span>&#125;;</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"resource"</span>)</span><br><span class="line">    ApplicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(configLocations);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2.获取任务启动器</span></span><br><span class="line">    JobLauncher jobLauncher = applicationContext.getBean(JobLauncher.class);</span><br><span class="line">    JobRepository jobRepository = applicationContext.getBean(JobRepository.class);</span><br><span class="line">    PlatformTransactionManager transactionManager = applicationContext.getBean(PlatformTransactionManager.class);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3.创建reader</span></span><br><span class="line">    FlatFileItemReader&lt;OrderData&gt; flatFileItemReader = <span class="keyword">new</span> FlatFileItemReader&lt;&gt;();</span><br><span class="line">    flatFileItemReader.setResource(<span class="keyword">new</span> FileSystemResource(<span class="string">"src/main/resources/order-source.csv"</span>));</span><br><span class="line">    flatFileItemReader.setLineMapper(<span class="keyword">new</span> OrderLineMapper());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 4.创建processor</span></span><br><span class="line">    OrderItemProcessor orderItemProcessor = <span class="keyword">new</span> OrderItemProcessor();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 5.创建writer</span></span><br><span class="line">    FlatFileItemWriter&lt;OrderView&gt; flatFileItemWriter = <span class="keyword">new</span> FlatFileItemWriter&lt;&gt;();</span><br><span class="line">    flatFileItemWriter.setResource(<span class="keyword">new</span> FileSystemResource(<span class="string">"src/main/resources/order-show.csv"</span>));</span><br><span class="line">    flatFileItemWriter.setLineAggregator(<span class="keyword">new</span> OrderLineAggregator());</span><br><span class="line">    flatFileItemWriter.setEncoding(<span class="string">"GBK"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 6.创建Listener</span></span><br><span class="line">    OrderItemProcessListener orderItemProcessListener = <span class="keyword">new</span> OrderItemProcessListener();</span><br><span class="line">    OrderJobListener orderJobListener = <span class="keyword">new</span> OrderJobListener();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 7.创建Step</span></span><br><span class="line">    StepBuilderFactory stepBuilderFactory = <span class="keyword">new</span> StepBuilderFactory(jobRepository, transactionManager);</span><br><span class="line">    Step step = stepBuilderFactory.get(<span class="string">"step"</span>).&lt;OrderData, OrderView&gt;chunk(<span class="number">1</span>)</span><br><span class="line">                      .reader(flatFileItemReader) <span class="comment">// 读操作</span></span><br><span class="line">                      .processor(orderItemProcessor) <span class="comment">// 处理操作</span></span><br><span class="line">                      .writer(flatFileItemWriter) <span class="comment">// 写操作</span></span><br><span class="line">                      .listener(orderItemProcessListener)</span><br><span class="line">                      .build();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 8.创建Job</span></span><br><span class="line">    JobBuilderFactory jobBuilderFactory = <span class="keyword">new</span> JobBuilderFactory(jobRepository);</span><br><span class="line">    Job job = jobBuilderFactory.get(<span class="string">"job"</span>).start(step).listener(orderJobListener).build();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 9.启动任务</span></span><br><span class="line">    jobLauncher.run(job, <span class="keyword">new</span> JobParameters());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>执行结果：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch13.png" alt="result"><br><br></p>
+<blockquote>
+<p><strong>Spring Batch系列传送门</strong><br><em>主目录页面：</em><a href="http://jiyilimian.com/jylm/8cabe91/">SpringBatch批处理框架</a><br><em>系列上一节：</em><a href="http://jiyilimian.com/jylm/8ae16a9c/">SpringBatch批处理框架-架构解析.md</a><br><em>系列下一节：</em><a href="http://jiyilimian.com/jylm/df04b46f/">SpringBatch批处理框架-扩展特性.md</a></p>
+</blockquote>
+<p>&#9803; 感觉本站内容读后有收获？，可点下面<strong>打赏</strong>鼓励。<br>&#9803; 感觉本站内容不错，可点下面<strong>分享</strong>传之。<br><br></p>
 
       
     </div>
+    
+    
+    
+	
+    <div>
+      
+          
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+    
+      <!-- JS库 sweetalert 可修改路径 -->
+        <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+	  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+	      <p><span>本文标题:</span><a href="/jylm/e23d4b81/">SpringBatch批处理框架-一个栗子</a></p>
+	        <p><span>文章作者:</span><a href="/" title="访问 沁路 的个人博客">沁路</a></p>
+		  <p><span>发布时间:</span>2018年04月05日 - 17:04</p>
+		    <p><span>最后更新:</span>2018年04月06日 - 10:04</p>
+		      <p><span>原始链接:</span><a href="/jylm/e23d4b81/" title="SpringBatch批处理框架-一个栗子">http://jiyilimian.com/jylm/e23d4b81/</a>
+		          <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://jiyilimian.com/jylm/e23d4b81/"  aria-label="复制成功！"></i></span>
+			    </p>
+			      <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+			      </div>
+			      <script> 
+			          var clipboard = new Clipboard('.fa-clipboard');
+				  	clipboard.on('success', $(function(){
+						  $(".fa-clipboard").click(function(){
+						  		swal({   
+										  title: "",   
+										  		  text: '复制成功',   
+												  		  html: false,
+														  		  timer: 500,   
+																  		  showConfirmButton: false
+																		  	    });
+																			    	  });
+																				      }));  
+																				      </script>
+																				      
+ 
+      
+    </div>
+    
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="沁路 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="沁路 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/批处理框架/" rel="tag"><i class="fa fa-tag"></i> 批处理框架</a>
+          
+            <a href="/tags/SpringBatch/" rel="tag"><i class="fa fa-tag"></i> SpringBatch</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/jylm/8ae16a9c/" rel="next" title="SpringBatch批处理框架-架构解析">
+                <i class="fa fa-chevron-left"></i> SpringBatch批处理框架-架构解析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/jylm/df04b46f/" rel="prev" title="SpringBatch批处理框架-扩展特性">
+                SpringBatch批处理框架-扩展特性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tsina">新浪微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -399,6 +680,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjI3NC84ODM4"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -419,8 +709,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -621,6 +920,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-前言"><span class="nav-number">1.</span> <span class="nav-text">0.前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-此处需要一个问题"><span class="nav-number">2.</span> <span class="nav-text">1.此处需要一个问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-引入依赖"><span class="nav-number">3.</span> <span class="nav-text">2.引入依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-自动注入"><span class="nav-number">4.</span> <span class="nav-text">3.自动注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-创建数据DTO"><span class="nav-number">5.</span> <span class="nav-text">4.创建数据DTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-ItemReader-读操作"><span class="nav-number">6.</span> <span class="nav-text">5.ItemReader-读操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-ItemProcessor-处理操作"><span class="nav-number">7.</span> <span class="nav-text">6.ItemProcessor-处理操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-ItemWriter-写操作"><span class="nav-number">8.</span> <span class="nav-text">7.ItemWriter-写操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Hello-World"><span class="nav-number">9.</span> <span class="nav-text">8.Hello World</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -771,6 +1086,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=10.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=10.0.1"></script>
+
+
 
   
 
@@ -799,6 +1118,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

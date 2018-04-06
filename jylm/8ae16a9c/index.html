@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="jiyilimian" />
+  <meta name="keywords" content="批处理框架,SpringBatch," />
 
 
 
@@ -83,16 +83,29 @@
 
 
 
-<meta name="description" content="足迹里的那一抹夕阳,何时待我回忆归去?">
-<meta property="og:type" content="website">
-<meta property="og:title" content="记忆里面">
-<meta property="og:url" content="http://jiyilimian.com/categories/沁听泪/index.html">
+<meta name="description" content="0x00.前言上一节我们有提到SpringBatch批处理框架的结构是：通过将批处理程序分解为Job和Job Step两个部分， 将处理环节定义为数据读、 数据处理和数据写三个步骤， 将异常处理机制归结为跳过、 重试、 重启三种类型， 将作业方式区分为多线程、 并行、 远程、 分区四大特征。而本节会深入详细地分析Spr">
+<meta name="keywords" content="批处理框架,SpringBatch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBatch批处理框架-架构解析">
+<meta property="og:url" content="http://jiyilimian.com/jylm/8ae16a9c/index.html">
 <meta property="og:site_name" content="记忆里面">
-<meta property="og:description" content="足迹里的那一抹夕阳,何时待我回忆归去?">
+<meta property="og:description" content="0x00.前言上一节我们有提到SpringBatch批处理框架的结构是：通过将批处理程序分解为Job和Job Step两个部分， 将处理环节定义为数据读、 数据处理和数据写三个步骤， 将异常处理机制归结为跳过、 重试、 重启三种类型， 将作业方式区分为多线程、 并行、 远程、 分区四大特征。而本节会深入详细地分析SpringBatch轻量级的、完善的批处理框架。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch15.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch16.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch17.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch18.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch14.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch19.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch20.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch21.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch22.png">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch23.png">
+<meta property="og:updated_time" content="2018-04-06T03:29:52.617Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记忆里面">
-<meta name="twitter:description" content="足迹里的那一抹夕阳,何时待我回忆归去?">
+<meta name="twitter:title" content="SpringBatch批处理框架-架构解析">
+<meta name="twitter:description" content="0x00.前言上一节我们有提到SpringBatch批处理框架的结构是：通过将批处理程序分解为Job和Job Step两个部分， 将处理环节定义为数据读、 数据处理和数据写三个步骤， 将异常处理机制归结为跳过、 重试、 重启三种类型， 将作业方式区分为多线程、 并行、 远程、 分区四大特征。而本节会深入详细地分析SpringBatch轻量级的、完善的批处理框架。">
+<meta name="twitter:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch15.png">
 
 
 
@@ -122,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="http://jiyilimian.com/categories/沁听泪/"/>
+  <link rel="canonical" href="http://jiyilimian.com/jylm/8ae16a9c/"/>
 
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -176,7 +189,7 @@
 
 
 
-  <title>分类: 沁听泪 | 记忆里面</title>
+  <title>SpringBatch批处理框架-架构解析 | 记忆里面</title>
   
 
 
@@ -205,7 +218,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -343,55 +356,343 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>沁听泪<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://jiyilimian.com/jylm/8ae16a9c/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="沁路">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记忆里面">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/jylm/8ee6c723/" itemprop="url">
-              
-                <span itemprop="name">走在音符上</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">SpringBatch批处理框架-架构解析</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-23T15:16:36+08:00"
-              content="2017-12-23" >
-          12-23
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T17:03:02+08:00">
+                2018-04-05
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/猿来如此/" itemprop="url" rel="index">
+                    <span itemprop="name">猿来如此</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/jylm/8ae16a9c/" class="leancloud_visitors" data-flag-title="SpringBatch批处理框架-架构解析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+		 <span>°C</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,989字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00.前言"></a>0x00.前言</h2><p>上一节我们有提到SpringBatch批处理框架的结构是：通过将批处理程序分解为Job和Job Step两个部分， 将处理环节定义为数据读、 数据处理和数据写三个步骤， 将异常处理机制归结为跳过、 重试、 重启三种类型， 将作业方式区分为多线程、 并行、 远程、 分区四大特征。而本节会深入详细地分析SpringBatch轻量级的、完善的批处理框架。<br><a id="more"></a></p>
+<h2 id="0x10-三层架构"><a href="#0x10-三层架构" class="headerlink" title="0x10.三层架构"></a>0x10.三层架构</h2><p>Spring Batch经典的三层架构如下：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch15.png" alt="三层架构"></p>
+<ul>
+<li><strong>Application:</strong> 包含所有的批处理作业，通过Spring框架管理程序员自定义的代码，即开发人员用Spring batch编写的所有批处理作业和自定义代码。</li>
+<li><strong>Batch Core:</strong> 包含加载和控制批处理作业所必需的核心类。包括Job Launcher、Job、Step的实现。</li>
+<li><strong>基础架构：</strong>应用层和核心层建立在基础构架层之上，基础构架层提供通用的读(Item Reader)、写(Item Writer)和服务处理（如：Retry Template: 重试模板；Repeat Template: 重复模板，可以被应用层和核心层使用）。     </li>
+</ul>
+<h2 id="0x20-业务架构"><a href="#0x20-业务架构" class="headerlink" title="0x20.业务架构"></a>0x20.业务架构</h2><p>而其业务架构可以更加清晰看出Spring Batch结构流程，如下：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch16.png" alt="业务架构"><br>详细说明如下：</p>
+<ul>
+<li><strong>作业调度器：</strong>是Spring Batch框架基础设施层提供的运行Job的能力。通过给定的Job名称和Job Parameters，提供Job执行入口</li>
+<li><strong>Job：</strong>定义，配置批处理任务的领域对象。作用：<br>1.做Step的容器，配置该批处理任务需要的Step，以及他们之间的逻辑关系；<br>2.配置该批处理任务的特征，比方说名字，是否可重启，是否对Job Parameters进行验证以及验证规则等。</li>
+<li><strong>Step：</strong>定义批处理任务中一个对立的逻辑任务处理单元。基本上的业务逻辑处理代码都是封装在Step中的。实现形式（2选1）：<br>1.Task let：形式非常自由，开发人员只需要实现Task let接口，其中逻辑完全自定义<br>2.Chunk-Oriented：定义一个Step的流程必须是“读-处理（可选）-写”，但是也对每一个步骤提供了接口Item Reader，Item Processor，Item Writer还有很多常用的默认实现（读写文件，读写数据库等等）。</li>
+<li><strong>Item Reader：</strong>从数据源（文件系统、数据库、队列等）中读取Item（一条数据记录）。</li>
+<li><strong>Item Processor：</strong>在Item写入数据源之前，对数据进行处理（如：数据清洗，数据转换，数据过滤， 数据校验等）。</li>
+<li><strong>Item Writer：</strong>将Item批量写入数据源（文件系统、数据库、队列等）。</li>
+<li><strong>Job Repository：</strong>该领域对象会为Spring Batch的运维数据提供一种持久化机制。其为所有的运维数据的提供CRUD的操作接口，并为所有的操作提供事务支持。     </li>
+</ul>
+<h2 id="0x30-领域对象"><a href="#0x30-领域对象" class="headerlink" title="0x30.领域对象"></a>0x30.领域对象</h2><h3 id="0x31-Job-Launcher"><a href="#0x31-Job-Launcher" class="headerlink" title="0x31.Job Launcher"></a>0x31.Job Launcher</h3><p><strong>作业调度器</strong>，是Spring Batch框架基础设施层提供的运行Job的能力。<br>通过给定的Job名称和作业参数Job Parameters, 可以通过Job Launcher执行Job。<br>通过Job Launcher可以在Java程序中调用批处理任务，也可以在通过命令行或者其他框架中调用批处理任务。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch17.png" alt="调度"></p>
+<h3 id="0x32-Job、Step"><a href="#0x32-Job、Step" class="headerlink" title="0x32.Job、Step"></a>0x32.Job、Step</h3><p><strong>Job、Step</strong>，已经在业务架构做了详细说明，关于他们的构成及其他们之间的关系如下：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch18.png" alt="job&amp;step"></p>
+<ul>
+<li><strong>Job:</strong>一般包括：作业实例、作业参数、作业执行器等<br><em>Job Instance(作业实例)：</em>每个作业执行时，都会生成一个实例，实例会被存放在Job Repository中，如果作业失败，下次重新执行该作业的时候，会使用同一个作业实例；对于Job和Job Instance的关系，大家可以想象为Java类定义和Java对象实例的关系。<br><em>Job Parameters（作业参数）：</em>一组用来启动批处理任务的参数，在启动Job时候，可以设置任何需要的作业参数，需要注意作业参数会用来标识作业实例，即不同的Job实例是通过Job参数来区分的。<br><em>Job Execution（作业执行器）：</em>负责具体Job的执行，每次运行Job都会启动一个新的Job执行器。</li>
+<li><strong>Step:</strong><br><em>Step Execution（作业执行器）：</em>负责具体Step的执行，每次运行Step都会启动一个新的执行器。</li>
+<li><strong>对应关系：</strong><br>1.一个Job可以有一个或多个Job Instance组成；一个Job Instance可以有一个或多个Job Execution组成。<br>2.一个Job可以拥有一到多个Step: 一个Step可以有一到多个Step Execution；一个Job Execution可以有一到多个Step Execution (当一个Job 由多个Step组成时， 每个Step执行都会生成一个新的Step Execution, 则一个Job Execution会拥有多个Step Execution).     </li>
+</ul>
+<h3 id="0x33-Execution-Context"><a href="#0x33-Execution-Context" class="headerlink" title="0x33.Execution Context"></a>0x33.Execution Context</h3><p><strong>执行上下文：</strong>Spring Batch框架提供的持久化与控制的key/value对，能够让开发者在Step Execution或Job Execution中保存需要进行待久化的状态。<br>如：Step执行过程中发生异常，框架会每次commit后记录当前的提交记录数以及读的记录数，这样下次重启Job会根据Execution Context中的数据恢复状态，保证继续从上次失败的点重新执行。<br>job与step执行上下文关系如下：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch14.png" alt="执行上下文"></p>
+<h3 id="0x34-Item-Reader"><a href="#0x34-Item-Reader" class="headerlink" title="0x34.Item Reader"></a>0x34.Item Reader</h3><p>Step中对资源的<strong>读处理</strong>，SpringBatch框架已经提供了多种类型的读实现，包括对文本文件、XML文件、数据库、JMS消息等读的处理。直接使用SpringBatch框架提供的读组件可以快速地完成批处理应用的开发和搭建。同时SpringBatch框架提供了较好的复用和扩展机制，可以复用现有的读服务或者快速实现自定义的读组件。<br>读操作支持组件如下：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch19.png" alt="读操作"></p>
+<h3 id="0x35-Item-Processor"><a href="#0x35-Item-Processor" class="headerlink" title="0x35.Item Processor"></a>0x35.Item Processor</h3><p>表示对读取的数据进行<strong>处理</strong>， 开发者可以实现自己的业务操作来对数据进行处理。<br>处理操作支持组件如下：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch20.png" alt="处理"><br>业务操作需要实现ltemProcessor接口，源码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ItemProcessor</span>&lt;<span class="title">I</span>, <span class="title">O</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function">O <span class="title">process</span><span class="params">(I item)</span> throwa Exception</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><em>说明：</em>process方法中，参数item是ItemReader读取的数据，返回值O是交给ItemWriter写的数据，在process方法中可以修改读到的数据的值。如果返回值是null, 表示忽略这次的数据。</p>
+<h3 id="0x36-Item-Writer"><a href="#0x36-Item-Writer" class="headerlink" title="0x36.Item Writer"></a>0x36.Item Writer</h3><p>Step中对资源的<strong>写处理</strong>，Spring Batch框架已经提供了多种类型的写实现，包括对文本文件、XML文件、DB等写的处理。直接使用Spring Batch框架提供的写组件可以快速地完成应用的开发和搭建。同时Spring Batch框架提供了较好的复用和扩展机制，可以用现有的写服务或者快速实现自定义的写组件。<br>写操作支持的组件如下：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch21.png" alt="写操作"></p>
+<h3 id="0x37-Job-Repository"><a href="#0x37-Job-Repository" class="headerlink" title="0x37.Job Repository"></a>0x37.Job Repository</h3><p>存储Job执行期的元数据（这里的元数据是指Job Instance、Job Execution、Job Parameters、Step Execution、Execution Context等数据），并提供两种默认实现。一种是存放在内存中；另一种是将元数据存放在数据库中。<br>通过将元数据存放在数据库中，可以随时监控批处理Job的执行状态，查看Job执行结果是成功还是失败，并且使得在Job失败的情况下重新启动Job成为可能。<br>属性如下：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch22.png" alt="存储器"><br><em>说明：</em><br>Spring Batch框架的JobRepository支待如下的数据库： DB2、Derby、H2、HSQLDB、MySQL、Oracle、PostgreSQL、SQLServer、Sybase。</p>
+<h3 id="0x38-总结"><a href="#0x38-总结" class="headerlink" title="0x38.总结"></a>0x38.总结</h3><p>通过上述主要领域对象的分析，这里总结一下Spring Batch主要的领域对象。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch23.png" alt="主要领域对象"><br><br></p>
+<blockquote>
+<p><strong>Spring Batch系列传送门</strong><br><em>主目录页面：</em><a href="http://jiyilimian.com/jylm/8cabe91/">SpringBatch批处理框架</a><br><em>系列上一节：</em><a href="http://jiyilimian.com/jylm/3ee81f0a/">SpringBatch批处理框架-初识.md</a><br><em>系列下一节：</em><a href="http://jiyilimian.com/jylm/e23d4b81/">SpringBatch批处理框架-一个栗子</a></p>
+</blockquote>
+<p>&#9803; 感觉本站内容读后有收获？，可点下面<strong>打赏</strong>鼓励。<br>&#9803; 感觉本站内容不错，可点下面<strong>分享</strong>传之。<br><br></p>
 
       
     </div>
+    
+    
+    
+	
+    <div>
+      
+          
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+    
+      <!-- JS库 sweetalert 可修改路径 -->
+        <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+	  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+	      <p><span>本文标题:</span><a href="/jylm/8ae16a9c/">SpringBatch批处理框架-架构解析</a></p>
+	        <p><span>文章作者:</span><a href="/" title="访问 沁路 的个人博客">沁路</a></p>
+		  <p><span>发布时间:</span>2018年04月05日 - 17:04</p>
+		    <p><span>最后更新:</span>2018年04月06日 - 11:04</p>
+		      <p><span>原始链接:</span><a href="/jylm/8ae16a9c/" title="SpringBatch批处理框架-架构解析">http://jiyilimian.com/jylm/8ae16a9c/</a>
+		          <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://jiyilimian.com/jylm/8ae16a9c/"  aria-label="复制成功！"></i></span>
+			    </p>
+			      <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+			      </div>
+			      <script> 
+			          var clipboard = new Clipboard('.fa-clipboard');
+				  	clipboard.on('success', $(function(){
+						  $(".fa-clipboard").click(function(){
+						  		swal({   
+										  title: "",   
+										  		  text: '复制成功',   
+												  		  html: false,
+														  		  timer: 500,   
+																  		  showConfirmButton: false
+																		  	    });
+																			    	  });
+																				      }));  
+																				      </script>
+																				      
+ 
+      
+    </div>
+    
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="沁路 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="沁路 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/批处理框架/" rel="tag"><i class="fa fa-tag"></i> 批处理框架</a>
+          
+            <a href="/tags/SpringBatch/" rel="tag"><i class="fa fa-tag"></i> SpringBatch</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/jylm/662e9f7d/" rel="next" title="三年小成记">
+                <i class="fa fa-chevron-left"></i> 三年小成记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/jylm/e23d4b81/" rel="prev" title="SpringBatch批处理框架-一个栗子">
+                SpringBatch批处理框架-一个栗子 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tsina">新浪微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -399,6 +700,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjI3NC84ODM4"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -419,8 +729,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -621,6 +940,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-前言"><span class="nav-number">1.</span> <span class="nav-text">0x00.前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x10-三层架构"><span class="nav-number">2.</span> <span class="nav-text">0x10.三层架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x20-业务架构"><span class="nav-number">3.</span> <span class="nav-text">0x20.业务架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x30-领域对象"><span class="nav-number">4.</span> <span class="nav-text">0x30.领域对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x31-Job-Launcher"><span class="nav-number">4.1.</span> <span class="nav-text">0x31.Job Launcher</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x32-Job、Step"><span class="nav-number">4.2.</span> <span class="nav-text">0x32.Job、Step</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x33-Execution-Context"><span class="nav-number">4.3.</span> <span class="nav-text">0x33.Execution Context</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x34-Item-Reader"><span class="nav-number">4.4.</span> <span class="nav-text">0x34.Item Reader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x35-Item-Processor"><span class="nav-number">4.5.</span> <span class="nav-text">0x35.Item Processor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x36-Item-Writer"><span class="nav-number">4.6.</span> <span class="nav-text">0x36.Item Writer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x37-Job-Repository"><span class="nav-number">4.7.</span> <span class="nav-text">0x37.Job Repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x38-总结"><span class="nav-number">4.8.</span> <span class="nav-text">0x38.总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -771,6 +1106,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=10.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=10.0.1"></script>
+
+
 
   
 
@@ -799,6 +1138,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

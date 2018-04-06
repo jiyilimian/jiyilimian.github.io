@@ -83,20 +83,20 @@
 
 
 
-<meta name="description" content="前言A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise syst">
+<meta name="description" content="0x00.前言A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise">
 <meta name="keywords" content="批处理框架,SpringBatch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBatch批处理框架-初识">
 <meta property="og:url" content="http://jiyilimian.com/jylm/3ee81f0a/index.html">
 <meta property="og:site_name" content="记忆里面">
-<meta property="og:description" content="前言A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.对于SpringBatch官网是这样给出描述的：一个轻量级的、完善的批处">
+<meta property="og:description" content="0x00.前言A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.对于SpringBatch官网是这样给出描述的：一个轻量级的、">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch01.png">
-<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch002.png">
-<meta property="og:updated_time" content="2018-04-05T06:37:23.667Z">
+<meta property="og:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch02.png">
+<meta property="og:updated_time" content="2018-04-06T02:43:49.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBatch批处理框架-初识">
-<meta name="twitter:description" content="前言A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.对于SpringBatch官网是这样给出描述的：一个轻量级的、完善的批处">
+<meta name="twitter:description" content="0x00.前言A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.对于SpringBatch官网是这样给出描述的：一个轻量级的、">
 <meta name="twitter:image" content="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch01.png">
 
 
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,372字
+                  1,373字
                 </span>
               
 
@@ -494,9 +494,9 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.<br>对于SpringBatch官网是这样给出描述的：一个轻量级的、完善的批处理框架，旨在帮助企业建立健壮的、高效的批处理应用，对企业系统的日常运作至关重要。<br><a id="more"></a></p>
-<h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>  在如今企业架构里，有这样一个业务场景：大量的OLTP交易中海量数据以及各种业务逻辑产生的数据，需要一个“批量处理、自动执行”的机制，将这些海量数据处理为另一种维度的数据，便于后续业务的继续。对应的业务场景如下图：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch01.png" alt="业务场景"></p>
-<h2 id="什么是批处理"><a href="#什么是批处理" class="headerlink" title="什么是批处理"></a>什么是批处理</h2><p>  上述描述的业务场景所需要的机制或者框架就是批处理框架，它具有显著的两个特点：批量处理和自动执行。<br>  通过与OLTP进行对比可能会更加清晰了解批处理框架：</p>
+        <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00.前言"></a>0x00.前言</h2><p>A lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.<br>对于SpringBatch官网是这样给出描述的：一个轻量级的、完善的批处理框架，旨在帮助企业建立健壮的、高效的批处理应用，对企业系统的日常运作至关重要。<br><a id="more"></a></p>
+<h2 id="0x01-业务场景"><a href="#0x01-业务场景" class="headerlink" title="0x01.业务场景"></a>0x01.业务场景</h2><p>  在如今企业架构里，有这样一个业务场景：大量的OLTP交易中海量数据以及各种业务逻辑产生的数据，需要一个“批量处理、自动执行”的机制，将这些海量数据处理为另一种维度的数据，便于后续业务的继续。对应的业务场景如下图：<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch01.png" alt="业务场景"></p>
+<h2 id="0x02-什么是批处理"><a href="#0x02-什么是批处理" class="headerlink" title="0x02.什么是批处理"></a>0x02.什么是批处理</h2><p>  上述描述的业务场景所需要的机制或者框架就是批处理框架，它具有显著的两个特点：批量处理和自动执行。<br>  通过与OLTP进行对比可能会更加清晰了解批处理框架：</p>
 <p><strong>OLTP:</strong></p>
 <ul>
 <li>特点：<ul>
@@ -520,8 +520,8 @@
 <li>涉及系统模块（示例）：<br>比如订单交易系统中，交易数据需要一定周期内进行对账、清结算等。</li>
 <li>相关资源：<br>基于java的批处理框架确凤毛麟角，尽管在企业IT环境中一直都有这种批处理的需求。但因为缺乏一个标准的、可重用的批处理框架导致在企业客户的IT系统中存在着很多一次编写,一次使用的版本,以及很多不同的内部解决方案。       </li>
 </ul>
-<p>而回到批处理框架，目前行业比较成熟且广泛使用的屈指可数。具有代表性的是Hadoop生态的MapReduce、Apache Spark、Spring Batch等等。那么他们又分别有什么不一样的呢？<br><strong>Hadoop MapReduce：</strong>面向大数据并行处理的计算模型、框架和平台。<br><strong>Apache Spark：</strong>面向大规模数据处理的快速通用的计算引擎，拥有 MapReduce所具有的优点且更优于它。<br><strong>Spring Batch:</strong>通过将批处理程序分解为Job和Job Step两个部分， 将处理环节定义为数据读、 数据处理和数据写三个步骤， 将异常处理机制归结为跳过、 重试、 重启三种类型， 将作业方式区分为多线程、 并行、 远程、 分区四大特征。<br>关于他们的区别，前两者是对大批数据的处理过程进行了抽象，而Spring Batch是对编写批处理程序本身的特性进行了抽象。而且Spring Batch相对于前两者更加“轻”，也是本系列的主角，因此关于前面两者相关信息不再赘述。</p>
-<h2 id="什么是SpringBatch"><a href="#什么是SpringBatch" class="headerlink" title="什么是SpringBatch"></a>什么是SpringBatch</h2><p>通过上述的分析，我们大概了解了批处理以及对应的业务场景。那么现在再来看关于批处理框架SpringBatch的介绍：“一个轻量级的、完善的批处理框架，旨在帮助企&gt;业建立健壮的、高效的批处理应用，对企业系统的日常运作至关重要。”，现在是否可以很好理解。<br>那么，现在我们继续了解下Spring Batch的背景。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch002.png" alt="成立背景"><br>从图中可以看出Spring Batch的强大源于SpringSource和Accenture强力支持。<br>而给出的Spring Batch适用于以下的<strong>业务场景</strong>：</p>
+<p>而回到批处理框架，目前行业比较成熟且广泛使用的屈指可数。具有代表性的是Hadoop生态的MapReduce、Apache Spark、Spring Batch等等。那么他们又分别有什么不一样的呢？<br><strong>Hadoop MapReduce：</strong>面向大数据并行处理的计算模型、框架和平台。<br><strong>Apache Spark：</strong>面向大规模数据处理的快速通用的计算引擎，拥有 MapReduce所具有的优点且更优于它。<br><strong>Spring Batch：</strong>通过将批处理程序分解为Job和Job Step两个部分， 将处理环节定义为数据读、 数据处理和数据写三个步骤， 将异常处理机制归结为跳过、 重试、 重启三种类型， 将作业方式区分为多线程、 并行、 远程、 分区四大特征。<br>关于他们的区别，前两者是对大批数据的处理过程进行了抽象，而Spring Batch是对编写批处理程序本身的特性进行了抽象。而且Spring Batch相对于前两者更加“轻”，也是本系列的主角，因此关于前面两者相关信息不再赘述。</p>
+<h2 id="0x03-什么是SpringBatch"><a href="#0x03-什么是SpringBatch" class="headerlink" title="0x03.什么是SpringBatch"></a>0x03.什么是SpringBatch</h2><p>通过上述的分析，我们大概了解了批处理以及对应的业务场景。那么现在再来看关于批处理框架SpringBatch的介绍：“一个轻量级的、完善的批处理框架，旨在帮助企&gt;业建立健壮的、高效的批处理应用，对企业系统的日常运作至关重要。”，现在是否可以很好理解。<br>那么，现在我们继续了解下Spring Batch的背景。<br><img src="http://p11on0k9n.bkt.clouddn.com/springbatch/springbatch02.png" alt="成立背景"><br>从图中可以看出Spring Batch的强大源于SpringSource和Accenture强力支持。<br>而给出的Spring Batch适用于以下的<strong>业务场景</strong>：</p>
 <ul>
 <li>定期提交批处理任务</li>
 <li>并发批处理：并行执行任务</li>
@@ -544,9 +544,9 @@
 </ul>
 <p>综上，是否对Spring Batch会有一个大概初步的认识？下一节，将会进一步深入Spring Batch批处理框架的架构解析。<br><br></p>
 <blockquote>
-<p><strong>Spring Batch系列传送门</strong><br><em>主目录页面：</em><a href="http://jiyilimian.com/jylm/8cabe91/">Spring Batch批处理框架</a><br><em>系列下一节：</em><a href="http://jiyilimian.com/jylm/8cabe91/">Spring Batch批处理框架-架构解析</a></p>
+<p><strong>Spring Batch系列传送门</strong><br><em>主目录页面：</em><a href="http://jiyilimian.com/jylm/8cabe91/">SpringBatch批处理框架</a><br><em>系列下一节：</em><a href="http://jiyilimian.com/jylm/8ae16a9c/">SpringBatch批处理框架-架构解析</a></p>
 </blockquote>
-<p>&#9803; 感觉本站内容读后有收获？，可点下下面<strong>打赏</strong>鼓励。<br>&#9803; 感觉本站内容不错，可点下面<strong>分享</strong>传之。<br><br></p>
+<p>&#9803; 感觉本站内容读后有收获？，可点下面<strong>打赏</strong>鼓励。<br>&#9803; 感觉本站内容不错，可点下面<strong>分享</strong>传之。<br><br></p>
 
       
     </div>
@@ -567,7 +567,7 @@
 	      <p><span>本文标题:</span><a href="/jylm/3ee81f0a/">SpringBatch批处理框架-初识</a></p>
 	        <p><span>文章作者:</span><a href="/" title="访问 沁路 的个人博客">沁路</a></p>
 		  <p><span>发布时间:</span>2018年03月24日 - 10:03</p>
-		    <p><span>最后更新:</span>2018年04月05日 - 14:04</p>
+		    <p><span>最后更新:</span>2018年04月06日 - 10:04</p>
 		      <p><span>原始链接:</span><a href="/jylm/3ee81f0a/" title="SpringBatch批处理框架-初识">http://jiyilimian.com/jylm/3ee81f0a/</a>
 		          <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://jiyilimian.com/jylm/3ee81f0a/"  aria-label="复制成功！"></i></span>
 			    </p>
@@ -768,7 +768,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -959,7 +959,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务场景"><span class="nav-number">2.</span> <span class="nav-text">业务场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是批处理"><span class="nav-number">3.</span> <span class="nav-text">什么是批处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是SpringBatch"><span class="nav-number">4.</span> <span class="nav-text">什么是SpringBatch</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-前言"><span class="nav-number">1.</span> <span class="nav-text">0x00.前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-业务场景"><span class="nav-number">2.</span> <span class="nav-text">0x01.业务场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-什么是批处理"><span class="nav-number">3.</span> <span class="nav-text">0x02.什么是批处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-什么是SpringBatch"><span class="nav-number">4.</span> <span class="nav-text">0x03.什么是SpringBatch</span></a></li></ol></div>
             
 
           </div>
@@ -1001,7 +1001,7 @@ var jiathis_config={
 <span class="post-meta-divider">|</span>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">记忆里面共19.9k字</span>
+  <span class="post-count">记忆里面共23.6k字</span>
 </div>
 
         
